@@ -1,0 +1,6 @@
+{
+  "name": "rocq",
+  "version": "0.1.0",
+  "description": "Unified Rocq plugin (draft, formalize, autoformalize, prove, autoprove, checkpoint, review, refactor, golf, learn, doctor) — MCP-first, scripts fallback",
+  "author": {"name": "Marc Lelarge"}
+}

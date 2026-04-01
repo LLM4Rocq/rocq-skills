@@ -1,0 +1,17 @@
+{
+  "name": "rocq-skills",
+  "owner": {
+    "name": "Marc Lelarge"
+  },
+  "metadata": {
+    "description": "Rocq theorem proving with guided + autonomous proving, MCP-first workflows, guardrails, and contribution helpers",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rocq",
+      "description": "Unified Rocq plugin (draft, formalize, autoformalize, prove, autoprove, checkpoint, review, refactor, golf, learn, doctor) — MCP-first, scripts fallback",
+      "source": "./plugins/rocq"
+    }
+  ]
+}
