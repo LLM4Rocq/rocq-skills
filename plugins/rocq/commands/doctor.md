@@ -43,6 +43,13 @@ Environment variables: `ROCQ_PLUGIN_ROOT`, `ROCQ_SCRIPTS`, `ROCQ_REFS`, `ROCQ_PY
 | Check | Detection | Status |
 |-------|-----------|--------|
 | Rocq MCP | `rocq_query("Check nat.")` available | Optional (interactive proving) |
+| Rocq MCP version | `uvx --version rocq-mcp` vs PyPI latest (`pip index versions rocq-mcp 2>/dev/null \|\| curl -s https://pypi.org/pypi/rocq-mcp/json \| python3 -c "import sys,json; print(json.load(sys.stdin)['info']['version'])"`) | Warn if outdated |
+
+If the installed version is behind the latest PyPI release, print a warning with the upgrade command:
+```
+⚠ rocq-mcp vX.Y.Z installed — latest is vA.B.C
+  Upgrade: claude mcp remove rocq-mcp && claude mcp add --transport stdio --scope user rocq-mcp -- uvx rocq-mcp@latest
+```
 
 ### 2. Plugin Check
 
@@ -84,6 +91,7 @@ python3 3.x.x
 
 ### MCP Tools
 Rocq MCP tools available (rocq_query)
+rocq-mcp up to date | ⚠ rocq-mcp outdated (vX.Y.Z → vA.B.C)
 
 ### Plugin
 ROCQ_PLUGIN_ROOT set
@@ -106,6 +114,7 @@ N Admitted in M files
 | Scripts not executable | `chmod +x $ROCQ_SCRIPTS/*.sh` |
 | Build fails | Check `_CoqProject`, run `coq_makefile -f _CoqProject -o CoqMakefile && make -f CoqMakefile` |
 | Rocq MCP tools unavailable | Check `claude mcp list`; if missing, `claude mcp add --transport stdio --scope user rocq-mcp -- uvx rocq-mcp` |
+| Rocq MCP outdated | `claude mcp remove rocq-mcp && claude mcp add --transport stdio --scope user rocq-mcp -- uvx rocq-mcp@latest` |
 
 ## Safety
 

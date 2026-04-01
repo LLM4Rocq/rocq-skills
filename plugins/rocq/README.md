@@ -71,6 +71,7 @@ rocq_check(body)                         # Execute tactics, see goals
 rocq_step_multi(tactics=[...])           # Test multiple tactics
 rocq_compile(source)                     # Full file compilation
 rocq_query("Search ...")                 # Library search
+rocq_goal(file, line, character)         # Proof goal at position (no session)
 rocq_verify(proof, ...)                  # Sandboxed verification
 ```
 

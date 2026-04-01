@@ -48,7 +48,7 @@ When `--mode=auto`, resolve by tie-breaking order:
 
 ### 2. Discovery (per mode)
 
-**repo:** `Glob`/`Grep` (file survey) → `Read` (targeted content) → `rocq_toc(file)` (structure). Build a map: key files, declarations, dependency flow, where proofs live.
+**repo:** `Glob`/`Grep` (file survey) → `Read` (targeted content) → `rocq_toc(file)` (structure) → `rocq_goal(file, line, character)` (inspect proof state at any point). Build a map: key files, declarations, dependency flow, where proofs live.
 
 **library:** `rocq_query("Search ...")` → `rocq_query("Check ...")` → `rocq_query("Print ...")`. Present canonical lemmas, type signatures, minimal usage examples.
 

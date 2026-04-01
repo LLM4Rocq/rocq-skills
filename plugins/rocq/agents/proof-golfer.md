@@ -1,7 +1,7 @@
 ---
 name: proof-golfer
 description: Golf Rocq proofs after they compile; improve proofs for directness, clarity, performance, and brevity without changing semantics. Use after successful compilation to achieve 30-40% size reduction.
-tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_verify
+tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_goal, mcp__rocq-mcp__rocq_verify
 model: opus
 ---
 
@@ -88,6 +88,7 @@ When invoked as a background subagent:
 
 **MCP:**
 ```
+rocq_goal(file, line, character)        # Quick goal peek (no session)
 rocq_start(file, theorem)              # Proof goal context
 rocq_check(body)                       # Execute tactics
 rocq_step_multi(tactics=[...])         # Test replacements

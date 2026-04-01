@@ -11,6 +11,7 @@ Full reference for the Rocq MCP server tools.
 | `rocq_step_multi` | Test multiple tactics (non-destructive) | No |
 | `rocq_compile` | Full file compilation | No |
 | `rocq_query` | Search, Check, Print, About | No |
+| `rocq_goal` | Proof goal at file position (no session needed) | No |
 | `rocq_toc` | File structure outline | No |
 | `rocq_notations` | Notation disambiguation | No |
 | `rocq_verify` | Sandboxed proof verification | No |
@@ -124,6 +125,26 @@ Get the structure of a .v file. Does NOT require a session.
 
 **Returns:** Hierarchical outline of definitions, lemmas, theorems, sections.
 
+## rocq_goal
+
+Get the proof goal at a specific position in a Rocq file. Does NOT require a `rocq_start` session — useful for quick inspection of proof state at any point.
+
+**Parameters:**
+- `file` (string, required): Path to .v file (relative to workspace)
+- `line` (int, required): 0-based line number (LSP convention)
+- `character` (int, required): 0-based character offset (LSP convention)
+- `workspace` (string): Workspace directory
+
+**Example:**
+```
+rocq_goal(file="theories/MyFile.v", line=42, character=0)
+```
+
+**Use cases:**
+- Inspect proof state without opening an interactive session
+- Quick goal check during review or planning phases
+- Complement `rocq_toc` with goal-level detail at specific positions
+
 ## rocq_notations
 
 List all notations in a statement and how they resolve. Helps debug notation ambiguity.
@@ -165,10 +186,11 @@ rocq_verify(
 ## Recommended Workflow
 
 ```
-1. rocq_start(file="File.v", theorem="my_thm")     # Open session
-2. rocq_query("Search relevant_pattern.")            # Find lemmas
-3. rocq_step_multi(tactics=["auto.", "lia.", ...])   # Explore
-4. rocq_check(body="winning_tactic.")                # Commit
-5. rocq_compile(source="full file")                  # Validate
-6. rocq_verify(proof=..., ...)                       # Verify
+1. rocq_goal(file="File.v", line=42, character=0)    # Quick goal peek
+2. rocq_start(file="File.v", theorem="my_thm")      # Open session
+3. rocq_query("Search relevant_pattern.")            # Find lemmas
+4. rocq_step_multi(tactics=["auto.", "lia.", ...])   # Explore
+5. rocq_check(body="winning_tactic.")                # Commit
+6. rocq_compile(source="full file")                  # Validate
+7. rocq_verify(proof=..., ...)                       # Verify
 ```

@@ -1,7 +1,7 @@
 ---
 name: axiom-eliminator
 description: Remove non-standard axioms by refactoring proofs. Use after checking axiom hygiene to systematically eliminate custom axioms.
-tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_verify
+tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_goal, mcp__rocq-mcp__rocq_verify
 model: opus
 ---
 
@@ -92,6 +92,7 @@ All others are flagged as custom/non-standard.
 ```
 rocq_query("Print Assumptions theorem_name.")  # Axiom audit
 rocq_query("Search ...")                        # Library search
+rocq_goal(file, line, character)                # Quick goal peek (no session)
 rocq_start(file, theorem)                       # Proof session
 rocq_check(body)                                # Execute tactics
 rocq_step_multi(tactics=[...])                  # Test candidates

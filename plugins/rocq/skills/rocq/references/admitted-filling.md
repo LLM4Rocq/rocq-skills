@@ -4,7 +4,7 @@ Primary reference for `Admitted`/`admit` elimination tactics used in prove/autop
 
 ## Core Workflow
 
-1. **Understand context** — `rocq_start(file, theorem)` to see the goal
+1. **Understand context** — `rocq_goal(file, line, character)` for quick goal peek, or `rocq_start(file, theorem)` to open a full session
 2. **Search library FIRST** — `rocq_query("Search ...")` before writing tactics
 3. **Generate 2-3 candidates** — different approaches (Direct, Tactics, Automation)
 4. **Test before applying** — `rocq_step_multi(tactics=[...])` to test all at once
@@ -14,6 +14,7 @@ Primary reference for `Admitted`/`admit` elimination tactics used in prove/autop
 ## MCP-First Requirement
 
 Always use MCP tools when available:
+- `rocq_goal(file, line, character)` — quick goal at position (no session needed)
 - `rocq_start(file, theorem)` — open proof session, see goals
 - `rocq_check(body)` — execute tactics, advance state
 - `rocq_step_multi(tactics)` — test multiple tactics (non-destructive, max 20)

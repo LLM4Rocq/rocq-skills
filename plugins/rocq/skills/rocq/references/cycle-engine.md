@@ -14,9 +14,10 @@ Discover Admitted via MCP, set filling order.
 
 **MCP-First Protocol:**
 1. `rocq_toc(file)` to get file structure
-2. `rocq_start(file, theorem)` at each Admitted to see goals
-3. Up to 3 `rocq_query("Search ...")` calls (~30s total)
-4. Record top candidates per Admitted
+2. `rocq_goal(file, line, character)` for quick goal inspection at each Admitted site (no session needed)
+3. `rocq_start(file, theorem)` to open full session when ready to work on an Admitted
+4. Up to 3 `rocq_query("Search ...")` calls (~30s total)
+5. Record top candidates per Admitted
 
 **Script fallback** (only when MCP is unavailable or exhausted):
 - `$ROCQ_SCRIPTS/admitted_analyzer.py` for discovery
