@@ -1,7 +1,7 @@
 ---
 name: admitted-filler-deep
 description: Strategic resolution of stubborn Admitted; may refactor across files within the header fence. Use when fast pass fails or for complex proofs.
-tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_goal, mcp__rocq-mcp__rocq_verify
+tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_verify
 model: opus
 ---
 
@@ -79,7 +79,6 @@ Final summary (~200-300 tokens):
 
 **MCP-first:**
 ```
-rocq_goal(file, line, character)        # Quick goal peek (no session)
 rocq_start(file, theorem)              # Understand goal
 rocq_check(body)                       # Execute tactics
 rocq_step_multi(tactics=[...])         # Test candidates

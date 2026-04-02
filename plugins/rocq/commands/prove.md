@@ -65,7 +65,7 @@ Each cycle has 6 phases — see [cycle-engine.md](../skills/rocq/references/cycl
 
 ### Phase 1: Plan
 
-Discover Admitted via MCP. Use `rocq_goal(file, line, character)` for quick goal inspection at each Admitted site, or `rocq_start(file, theorem)` for full sessions. Search with `rocq_query` (up to 3 queries, ~30s), show plan and get confirmation.
+Discover Admitted via MCP. Start proof sessions (`rocq_start`), search with `rocq_query` (up to 3 queries, ~30s), show plan and get confirmation.
 
 ### Phase 2: Work (Per Admitted)
 

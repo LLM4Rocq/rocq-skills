@@ -91,7 +91,6 @@ rocq_check(body)                                # Execute tactics, see updated g
 rocq_step_multi(tactics=[...])                  # Test multiple tactics in parallel (max 20)
 rocq_compile(source)                            # Full file compilation check
 rocq_query("Search nat.", preamble="...")        # Search, Check, Print, About
-rocq_goal(file, line, character)                # Proof goal at position (no session needed)
 rocq_toc(file)                                  # File structure outline
 rocq_notations(statement, preamble="...")        # Notation disambiguation
 rocq_verify(proof, problem_name, problem_statement)  # Sandboxed proof verification
@@ -120,7 +119,7 @@ rocq_query("SearchPattern (_ * _ = _ * _).")    # Pattern-based search
 | coqc | yes | `coqc --version` | none — run `/rocq:doctor` |
 | Python 3 | yes (scripts) | `$ROCQ_PYTHON_BIN` set by bootstrap | none for script-dependent operations |
 | `$ROCQ_SCRIPTS` | yes (set by bootstrap) | `echo "$ROCQ_SCRIPTS"` | run `/rocq:doctor` |
-| Rocq MCP | no | try `rocq_query("Check nat.")` or `rocq_goal(file, 0, 0)` | scripts + `coqc` (file-level only) |
+| Rocq MCP | no | try `rocq_query("Check nat.")` | scripts + `coqc` (file-level only) |
 | Subagent dispatch | no | host-dependent | run work in main thread |
 | Slash commands | no | host-dependent | follow skill instructions directly |
 

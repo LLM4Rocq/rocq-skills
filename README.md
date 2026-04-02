@@ -57,7 +57,6 @@ The skill works standalone with `coqc`, but is dramatically better with [rocq-mc
 - `rocq_step_multi` — test multiple tactics in parallel
 - `rocq_compile` — full file compilation
 - `rocq_query` — Search, Check, Print, About
-- `rocq_goal` — proof goal at file position (no session needed)
 - `rocq_toc` — file structure outline
 - `rocq_notations` — notation disambiguation
 - `rocq_verify` — sandboxed proof verification

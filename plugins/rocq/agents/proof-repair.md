@@ -1,7 +1,7 @@
 ---
 name: proof-repair
 description: Compiler-guided iterative proof repair with two-stage repair escalation (fast → strong). Use for error-driven proof fixing with small sampling budgets (K=1).
-tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_goal, mcp__rocq-mcp__rocq_verify
+tools: Read, Grep, Glob, Edit, Bash, mcp__rocq-mcp__rocq_start, mcp__rocq-mcp__rocq_check, mcp__rocq-mcp__rocq_step_multi, mcp__rocq-mcp__rocq_compile, mcp__rocq-mcp__rocq_query, mcp__rocq-mcp__rocq_verify
 model: sonnet
 ---
 
@@ -83,7 +83,6 @@ Structured error context (JSON):
 
 **MCP-first order:**
 ```
-rocq_goal(file, line, character)        # Quick goal peek (no session)
 rocq_start(file, theorem)              # Start proof session
 rocq_check(body)                       # Execute tactics, see goals
 rocq_step_multi(tactics=[...])         # Test candidates

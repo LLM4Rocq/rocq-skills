@@ -68,8 +68,7 @@ Read-only review of Rocq proofs for quality, style, and optimization opportuniti
 
 1. **Build Status** - `rocq_compile` or project build
 2. **Admitted Audit** - `${ROCQ_PYTHON_BIN:-python3} "$ROCQ_SCRIPTS/admitted_analyzer.py" <target> --format=json --report-only`
-3. **Goal Inspection** - Use `rocq_goal(file, line, character)` for quick read-only goal checks at Admitted sites (no session needed)
-4. **Axiom Check** - `bash "$ROCQ_SCRIPTS/check_axioms.sh" <target> --report-only` or `rocq_query("Print Assumptions ...")`
+3. **Axiom Check** - `bash "$ROCQ_SCRIPTS/check_axioms.sh" <target> --report-only` or `rocq_query("Print Assumptions ...")`
 4. **Style Review** - Check conventions (naming, structure, tactics, 80-char line width)
 5. **Golfing Opportunities** - `${ROCQ_PYTHON_BIN:-python3} "$ROCQ_SCRIPTS/find_golfable.py" <target>`
 6. **Complexity Metrics** - Proof sizes, longest proofs, tactic patterns
